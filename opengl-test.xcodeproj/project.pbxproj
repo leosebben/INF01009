@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1576CDB32A15313D00DFCCB2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1576CDB22A15313D00DFCCB2 /* main.cpp */; };
+		1576CDBB2A15324C00DFCCB2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1576CDBA2A15324C00DFCCB2 /* OpenGL.framework */; };
+		1576CDBD2A15328900DFCCB2 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1576CDBC2A15328900DFCCB2 /* libglfw.3.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		1576CDAF2A15313D00DFCCB2 /* opengl-test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "opengl-test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1576CDB22A15313D00DFCCB2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1576CDBA2A15324C00DFCCB2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		1576CDBC2A15328900DFCCB2 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../opt/homebrew/Cellar/glfw/3.3.8/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1576CDBD2A15328900DFCCB2 /* libglfw.3.3.dylib in Frameworks */,
+				1576CDBB2A15324C00DFCCB2 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			children = (
 				1576CDB12A15313D00DFCCB2 /* opengl-test */,
 				1576CDB02A15313D00DFCCB2 /* Products */,
+				1576CDB92A15324C00DFCCB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +67,15 @@
 				1576CDB22A15313D00DFCCB2 /* main.cpp */,
 			);
 			path = "opengl-test";
+			sourceTree = "<group>";
+		};
+		1576CDB92A15324C00DFCCB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1576CDBC2A15328900DFCCB2 /* libglfw.3.3.dylib */,
+				1576CDBA2A15324C00DFCCB2 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +254,13 @@
 		1576CDB72A15313D00DFCCB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/glfw/3.3.8/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/glfw/3.3.8/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -246,7 +268,13 @@
 		1576CDB82A15313D00DFCCB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/glfw/3.3.8/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/glfw/3.3.8/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
